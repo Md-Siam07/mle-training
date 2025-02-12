@@ -30,7 +30,10 @@ jobs:
           label: "Setup"
 
       - name: Run Script
-        run: python main.py
+        run: |
+          python src/scripts/train.py
+          python src/scripts/score.py
+          python src/housePricePrediction/prediction.py
 
       - name: Execution Measurement
         uses: green-coding-solutions/eco-ci-energy-estimation@v4
